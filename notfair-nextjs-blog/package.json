@@ -37,7 +37,7 @@
   "homepage": "https://notfair.co/backlinks",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nowork-studio/notfair-plugin.git",
+    "url": "git+https://github.com/swastik-agnihotri/growth-agent-toolkit.git",
     "directory": "notfair-nextjs-blog"
   },
   "peerDependencies": {

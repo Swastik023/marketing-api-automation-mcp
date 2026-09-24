@@ -1,11 +1,11 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.nowork-studio/notfair",
+  "name": "io.github.swastik-agnihotri/notfair",
   "title": "NotFair",
   "description": "OAuth MCP for Google, Meta, X, LinkedIn, Reddit, TikTok, GSC, GA4, WordPress and GHL.",
   "websiteUrl": "https://notfair.co",
   "repository": {
-    "url": "https://github.com/nowork-studio/notfair-plugin",
+    "url": "https://github.com/swastik-agnihotri/growth-agent-toolkit",
     "source": "github"
   },
   "version": "0.27.12",

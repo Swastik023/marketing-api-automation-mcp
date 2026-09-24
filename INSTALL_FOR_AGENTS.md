@@ -6,7 +6,7 @@ You are an AI coding agent (Claude Code, Codex, Hermes, Cursor, or similar). The
 
 ```
 Retrieve and follow the instructions at:
-https://raw.githubusercontent.com/nowork-studio/notfair-plugin/main/INSTALL_FOR_AGENTS.md
+https://raw.githubusercontent.com/swastik-agnihotri/growth-agent-toolkit/main/INSTALL_FOR_AGENTS.md
 ```
 
 ---
@@ -29,8 +29,8 @@ If you cannot determine the host, ask the user once and proceed.
 Codex and Claude Code install directly from the marketplace in Step 3 and can skip this checkout. For Hermes and generic agents, use an existing local NotFair repo or clone it:
 
 ```bash
-git clone https://github.com/nowork-studio/notfair-plugin.git
-cd notfair-plugin
+git clone https://github.com/swastik-agnihotri/growth-agent-toolkit.git
+cd growth-agent-toolkit
 ```
 
 ---
@@ -39,11 +39,11 @@ cd notfair-plugin
 
 ### host = `claude-code`
 
-NotFair is published as a Claude Code plugin via the `nowork-studio` marketplace. The user should run inside Claude Code:
+NotFair is published as a Claude Code plugin via the `swastik-agnihotri` marketplace. The user should run inside Claude Code:
 
 ```
-/plugin marketplace add nowork-studio/notfair-plugin
-/plugin install notfair@nowork-studio
+/plugin marketplace add swastik-agnihotri/growth-agent-toolkit
+/plugin install notfair@swastik-agnihotri
 ```
 
 Then verify by listing installed plugins. No further action required — Claude Code reads `.claude-plugin/plugin.json` directly.
@@ -53,16 +53,16 @@ Then verify by listing installed plugins. No further action required — Claude 
 Install the public plugin through Codex:
 
 ```bash
-codex plugin marketplace add nowork-studio/notfair-plugin --json && codex plugin add notfair@nowork-studio --json && codex mcp login NotFair
+codex plugin marketplace add swastik-agnihotri/growth-agent-toolkit --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
 ```
 
-If Codex reports that `nowork-studio` is already configured, refresh it and continue:
+If Codex reports that `swastik-agnihotri` is already configured, refresh it and continue:
 
 ```bash
-codex plugin marketplace upgrade nowork-studio --json && codex plugin add notfair@nowork-studio --json && codex mcp login NotFair
+codex plugin marketplace upgrade swastik-agnihotri --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
 ```
 
-Verify that `notfair@nowork-studio` is installed and `codex mcp list` reports `NotFair` as authenticated. The plugin's Codex manifest loads its skills and one universal NotFair MCP connection; do not add the dedicated platform MCP endpoints separately.
+Verify that `notfair@swastik-agnihotri` is installed and `codex mcp list` reports `NotFair` as authenticated. The plugin's Codex manifest loads its skills and one universal NotFair MCP connection; do not add the dedicated platform MCP endpoints separately.
 
 ### host = `hermes`
 

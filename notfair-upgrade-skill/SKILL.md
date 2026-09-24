@@ -20,8 +20,8 @@ Upgrade the NotFair plugin to the latest version and show what's new.
 
 | What | Path |
 |------|------|
-| Marketplace repo | `~/.claude/plugins/marketplaces/nowork-studio/` |
-| Plugin cache | `~/.claude/plugins/cache/nowork-studio/notfair/<version>/` |
+| Marketplace repo | `~/.claude/plugins/marketplaces/swastik-agnihotri/` |
+| Plugin cache | `~/.claude/plugins/cache/swastik-agnihotri/notfair/<version>/` |
 | Installed plugins | `~/.claude/plugins/installed_plugins.json` |
 | Update state | `~/.toprank/` (intentionally preserved — see CHANGELOG 0.24.0) |
 
@@ -43,11 +43,11 @@ First check for dev symlink (see "Dev symlink detection" section). If detected, 
 
 ```bash
 # Find the currently installed plugin path
-INSTALLED_DIR=$(ls -d ~/.claude/plugins/cache/nowork-studio/notfair/*/ 2>/dev/null | grep -v '.bak' | head -1)
+INSTALLED_DIR=$(ls -d ~/.claude/plugins/cache/swastik-agnihotri/notfair/*/ 2>/dev/null | grep -v '.bak' | head -1)
 if [ -z "$INSTALLED_DIR" ]; then
   echo "ERROR: NotFair plugin not found in cache"; exit 1
 fi
-MARKETPLACE_DIR="$HOME/.claude/plugins/marketplaces/nowork-studio"
+MARKETPLACE_DIR="$HOME/.claude/plugins/marketplaces/swastik-agnihotri"
 if [ ! -d "$MARKETPLACE_DIR/.git" ]; then
   echo "ERROR: marketplace repo not found at $MARKETPLACE_DIR"; exit 1
 fi
@@ -71,7 +71,7 @@ NEW_VERSION=$(cat VERSION | tr -d '[:space:]')
 GIT_SHA=$(git rev-parse HEAD)
 
 # Create new versioned cache directory
-NEW_CACHE_DIR="$HOME/.claude/plugins/cache/nowork-studio/notfair/$NEW_VERSION"
+NEW_CACHE_DIR="$HOME/.claude/plugins/cache/swastik-agnihotri/notfair/$NEW_VERSION"
 if [ -d "$NEW_CACHE_DIR" ]; then
   rm -rf "$NEW_CACHE_DIR"
 fi
@@ -85,7 +85,7 @@ If the copy fails, warn: "Upgrade failed — the old version is still active. Ru
 
 ### Step 5: Update installed_plugins.json
 
-Read `~/.claude/plugins/installed_plugins.json`, then update the `notfair@nowork-studio` entry:
+Read `~/.claude/plugins/installed_plugins.json`, then update the `notfair@swastik-agnihotri` entry:
 
 ```bash
 python3 -c "
@@ -96,18 +96,18 @@ path = os.path.expanduser('~/.claude/plugins/installed_plugins.json')
 with open(path) as f:
     data = json.load(f)
 
-data['plugins']['notfair@nowork-studio'] = [{
+data['plugins']['notfair@swastik-agnihotri'] = [{
     'scope': 'user',
-    'installPath': os.path.expanduser('~/.claude/plugins/cache/nowork-studio/notfair/$NEW_VERSION'),
+    'installPath': os.path.expanduser('~/.claude/plugins/cache/swastik-agnihotri/notfair/$NEW_VERSION'),
     'version': '$NEW_VERSION',
-    'installedAt': data['plugins'].get('notfair@nowork-studio', [{}])[0].get('installedAt', datetime.now(timezone.utc).isoformat()),
+    'installedAt': data['plugins'].get('notfair@swastik-agnihotri', [{}])[0].get('installedAt', datetime.now(timezone.utc).isoformat()),
     'lastUpdated': datetime.now(timezone.utc).isoformat(),
     'gitCommitSha': '$GIT_SHA'
 }]
 
 with open(path, 'w') as f:
     json.dump(data, f, indent=4)
-print('Updated installed_plugins.json: notfair@nowork-studio -> v$NEW_VERSION')
+print('Updated installed_plugins.json: notfair@swastik-agnihotri -> v$NEW_VERSION')
 "
 ```
 
@@ -116,7 +116,7 @@ print('Updated installed_plugins.json: notfair@nowork-studio -> v$NEW_VERSION')
 Remove old versioned cache directories (keep only the new one). Never remove a `dev` symlink:
 
 ```bash
-for dir in ~/.claude/plugins/cache/nowork-studio/notfair/*/; do
+for dir in ~/.claude/plugins/cache/swastik-agnihotri/notfair/*/; do
   ver=$(basename "$dir")
   if [ "$ver" != "$NEW_VERSION" ] && [ "$ver" != "dev" ]; then
     rm -rf "$dir"
@@ -161,7 +161,7 @@ After showing What's New, continue with whatever skill the user originally invok
 Before upgrading, check if the installed cache directory is a symlink named `dev`:
 
 ```bash
-CACHE_DIR=$(ls -d ~/.claude/plugins/cache/nowork-studio/notfair/*/ 2>/dev/null | head -1)
+CACHE_DIR=$(ls -d ~/.claude/plugins/cache/swastik-agnihotri/notfair/*/ 2>/dev/null | head -1)
 if [ -L "${CACHE_DIR%/}" ] && [ "$(basename "$CACHE_DIR")" = "dev" ]; then
   echo "DEV_SYMLINK"
 fi
@@ -179,7 +179,7 @@ When invoked directly as `/notfair:upgrade`:
 
 2. Force a fresh update check (bypass cache and snooze):
 ```bash
-_UPD_BIN=$(ls ~/.claude/plugins/cache/nowork-studio/notfair/*/bin/notfair-update-check 2>/dev/null | head -1)
+_UPD_BIN=$(ls ~/.claude/plugins/cache/swastik-agnihotri/notfair/*/bin/notfair-update-check 2>/dev/null | head -1)
 [ -n "$_UPD_BIN" ] && _UPD=$("$_UPD_BIN" --force 2>/dev/null || true) || _UPD=""
 echo "$_UPD"
 ```

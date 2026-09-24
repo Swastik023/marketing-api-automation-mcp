@@ -8,7 +8,7 @@
 
 **Open-source SEO, GEO, and marketing skills for AI agents.**
 
-The NotFair Plugin gives Claude Code, Codex, Hermes, and other compatible agents practical marketing workflows they can follow—not another generic prompt collection. Use it to audit a site, investigate a traffic drop, analyze GA4 and Search Console, find wasted ad spend across Google, Meta, X, LinkedIn, Reddit, and TikTok, operate connected WordPress and GoHighLevel accounts, build campaign plans, and make reviewable changes.
+The Growth Agent Toolkit gives Claude Code, Codex, Hermes, and other compatible agents practical marketing workflows they can follow—not another generic prompt collection. Use it to audit a site, investigate a traffic drop, analyze GA4 and Search Console, find wasted ad spend across Google, Meta, X, LinkedIn, Reddit, and TikTok, operate connected WordPress and GoHighLevel accounts, build campaign plans, and make reviewable changes.
 
 Every skill is built in the open as a readable `SKILL.md`, with supporting references, scripts, and evals where needed. Inspect it, adapt it, or contribute a better workflow.
 
@@ -30,7 +30,7 @@ Every skill is built in the open as a readable `SKILL.md`, with supporting refer
 | **Analytics** | Query live GA4 and Search Console data, compare complete periods, inspect URLs, manage sitemaps, and update supported measurement configuration |
 | **Content** | Turn search demand into editorial plans, briefs, articles, landing pages, metadata, and structured data |
 
-The NotFair Plugin currently ships **48 skills** across SEO, GEO, paid media, advertising platforms, analytics, WordPress, CRM, and cross-model review.
+The Growth Agent Toolkit currently ships **48 skills** across SEO, GEO, paid media, advertising platforms, analytics, WordPress, CRM, and cross-model review.
 
 ## Quick start
 
@@ -39,8 +39,8 @@ The NotFair Plugin currently ships **48 skills** across SEO, GEO, paid media, ad
 Install the NotFair plugin from its marketplace:
 
 ```text
-/plugin marketplace add nowork-studio/notfair-plugin
-/plugin install notfair@nowork-studio
+/plugin marketplace add swastik-agnihotri/growth-agent-toolkit
+/plugin install notfair@swastik-agnihotri
 ```
 
 Then ask for the workflow you need:
@@ -75,7 +75,7 @@ For local testing before the marketplace listing is available, clone this
 repository into Cursor's local plugin directory:
 
 ```bash
-git clone https://github.com/nowork-studio/notfair-plugin.git ~/.cursor/plugins/local/notfair
+git clone https://github.com/swastik-agnihotri/growth-agent-toolkit.git ~/.cursor/plugins/local/notfair
 ```
 
 Restart Cursor after installing or updating the local plugin.
@@ -92,7 +92,7 @@ find **NotFair** in the Powers registry after its listing is approved. The root
 Install the extension directly from GitHub:
 
 ```bash
-gemini extensions install https://github.com/nowork-studio/notfair-plugin
+gemini extensions install https://github.com/swastik-agnihotri/growth-agent-toolkit
 ```
 
 The extension loads the repository guidance and the universal NotFair MCP. Run
@@ -103,32 +103,32 @@ The extension loads the repository guidance and the universal NotFair MCP. Run
 Install the universal NotFair plugin directly through Codex:
 
 ```bash
-codex plugin marketplace add nowork-studio/notfair-plugin --json && codex plugin add notfair@nowork-studio --json && codex mcp login NotFair
+codex plugin marketplace add swastik-agnihotri/growth-agent-toolkit --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
 ```
 
 Codex installs the skills, registers one NotFair MCP connection, and opens its OAuth flow. If you prefer a workspace-local checkout, clone the repository and open it as a workspace; [`AGENTS.md`](AGENTS.md) maps marketing requests to the right skill.
 
 ```bash
-git clone https://github.com/nowork-studio/notfair-plugin.git
-cd notfair-plugin
+git clone https://github.com/swastik-agnihotri/growth-agent-toolkit.git
+cd growth-agent-toolkit
 ```
 
-If the `nowork-studio` marketplace is already configured, refresh it instead:
+If the `swastik-agnihotri` marketplace is already configured, refresh it instead:
 
 ```bash
-codex plugin marketplace upgrade nowork-studio --json && codex plugin add notfair@nowork-studio --json && codex mcp login NotFair
+codex plugin marketplace upgrade swastik-agnihotri --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
 ```
 
 For host-specific setup, give your agent [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_AGENTS.md), or paste:
 
 ```text
 Retrieve and follow the instructions at:
-https://raw.githubusercontent.com/nowork-studio/notfair-plugin/main/INSTALL_FOR_AGENTS.md
+https://raw.githubusercontent.com/swastik-agnihotri/growth-agent-toolkit/main/INSTALL_FOR_AGENTS.md
 ```
 
 ## Why skills instead of one giant marketing agent?
 
-Marketing work gets unreliable when every request goes through the same vague prompt. The NotFair Plugin splits the work into focused, testable procedures.
+Marketing work gets unreliable when every request goes through the same vague prompt. The Growth Agent Toolkit splits the work into focused, testable procedures.
 
 - **Specialized:** each skill has a defined job, required inputs, decision rules, and output format.
 - **Evidence-led:** live-data workflows use Search Console, Google Analytics, Google Ads, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, TikTok Ads, WordPress, or GoHighLevel instead of guessing from generic best practices.
@@ -253,14 +253,14 @@ Supported account operations come from the live connection. Changes must stay wi
 
 - [Privacy Policy](https://notfair.co/privacy)
 - [Support and community](https://discord.gg/gVJCRczpps)
-- [Issue tracker](https://github.com/nowork-studio/notfair-plugin/issues)
+- [Issue tracker](https://github.com/swastik-agnihotri/growth-agent-toolkit/issues)
 
 Inside a skill, connectors use tool-agnostic placeholders such as `~~google-ads`, `~~meta-ads`, `~~x-ads`, `~~linkedin-ads`, `~~reddit-ads`, `~~tiktok-ads`, `~~search-console`, `~~google-analytics`, `~~wordpress`, and `~~gohighlevel`. The agent resolves each placeholder to a compatible tool available in the current session, so the workflow is not coupled to one MCP namespace.
 
 ## How the repository is organized
 
 ```text
-notfair-plugin/
+growth-agent-toolkit/
 ├── AGENTS.md                    # intent-to-skill resolver for AI agents
 ├── .claude-plugin/              # Claude Code plugin manifest
 ├── paid-ads/                    # cross-channel planning, review, optimization
@@ -310,7 +310,7 @@ Open a pull request with one skill or one coherent improvement. For application 
 ## Community
 
 - Join the [NotFair Discord](https://discord.gg/gVJCRczpps)
-- [Open an issue](https://github.com/nowork-studio/notfair-plugin/issues)
+- [Open an issue](https://github.com/swastik-agnihotri/growth-agent-toolkit/issues)
 - Star the repository if these workflows make your agent more useful
 
 ## License

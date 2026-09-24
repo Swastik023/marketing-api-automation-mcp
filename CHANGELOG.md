@@ -88,7 +88,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - **Canonical all-platform MCP endpoint (v0.27.2).** Updated Cursor, Codex, Claude, Gemini, Agent Plugins, MCP Registry metadata, tests, and public documentation to advertise `https://notfair.co/api/mcp/notfair`. The backward-compatible legacy route remains supported but is no longer shown to new users.
 - **One-command universal MCP onboarding (v0.27.0).** Replaced the six bundled platform server registrations with one `NotFair` MCP connection, now advertised at `https://notfair.co/api/mcp/notfair`. Codex and Claude now need one OAuth grant; workspaces enabled in the staged Google-first rollout connect Google Ads during that flow, and every supported platform remains isolated behind explicit tool prefixes such as `google_ads_`, `meta_ads_`, and `search_console_`.
-- **Repository renamed to `nowork-studio/notfair-plugin`.** Active clone, install, update-check, package metadata, and source links now use the new GitHub repository name. The plugin name and `/notfair:*` command namespace remain unchanged.
+- **Repository renamed to `swastik-agnihotri/growth-agent-toolkit`.** Active clone, install, update-check, package metadata, and source links now use the new GitHub repository name. The plugin name and `/notfair:*` command namespace remain unchanged.
 - **`/google-ads-copy` now records concepts and claim sources,** requires unsupported proof to be marked for substantiation, and makes test decisions from pre-set metrics and adequate exposure rather than early conversion-rate gaps.
 
 ---
@@ -236,9 +236,9 @@ every installed user.
 **You must uninstall the old plugin and reinstall under the new name:**
 
 ```
-/plugin uninstall toprank@nowork-studio
-/plugin marketplace add nowork-studio/notfair
-/plugin install notfair@nowork-studio
+/plugin uninstall toprank@swastik-agnihotri
+/plugin marketplace add swastik-agnihotri/notfair
+/plugin install notfair@swastik-agnihotri
 ```
 
 After reinstall, every slash command moves from `/toprank:foo` →
@@ -265,7 +265,7 @@ The upgrade skill is now `/notfair:upgrade` (previously
   fences (previously `<!-- toprank:managed -->`). Re-running an installer
   against a file that has the old fence will create a second fence; users
   who want a fully clean state can delete the old block manually.
-- **GitHub repository** — `nowork-studio/toprank` → `nowork-studio/notfair`
+- **GitHub repository** — `swastik-agnihotri/toprank` → `swastik-agnihotri/notfair`
   (GitHub auto-redirects the old URL).
 
 ### Intentionally preserved (carve-outs)
@@ -525,7 +525,7 @@ reflects that. CHANGELOG entries below this one are unchanged.
 - **`CLAUDE.md` branding rule** — added an explicit "NotFair going forward" section. New user-facing text and docs must use NotFair. Existing legacy `adsagent` references are kept only where they are load-bearing (filesystem migration, prefix detection during the rename window) or historical (CHANGELOG).
 
 ### Removed
-- **Stale "server source" link from `README.md`.** The link previously pointed to `nowork-studio/ads-agent` (404) and the actual server source is not public. Removed the pointer entirely — the surrounding paragraph already covers what Toprank users need (endpoint URL, registry name, OAuth flow).
+- **Stale "server source" link from `README.md`.** The link previously pointed to `swastik-agnihotri/ads-agent` (404) and the actual server source is not public. Removed the pointer entirely — the surrounding paragraph already covers what Toprank users need (endpoint URL, registry name, OAuth flow).
 
 ### Notes
 - No skill behavior changes. All canonical SEO, Google Ads, Meta Ads, and Gemini skills work identically to 0.18.0.
@@ -588,7 +588,7 @@ reflects that. CHANGELOG entries below this one are unchanged.
 - **Auth scheme switched from API key to native OAuth 2.1** — `ADSAGENT_API_KEY` is no longer required, and the `mcp-remote` (npx) bridge has been removed. `.mcp.json` now uses Claude Code's native HTTP transport (`"type": "http"`); on first connection Claude Code opens a browser tab for OAuth sign-in to NotFair and stores the token in your OS keychain. You can remove `ADSAGENT_API_KEY` from `~/.claude/settings.json` once the new server is connected.
 - **Local namespace renamed `.adsagent` → `.notfair`** — affects the global config dir (`~/.adsagent/` → `~/.notfair/`), the project config file (`.adsagent.json` → `.notfair.json`), and the project data dir (`.adsagent/` → `.notfair/`). The shared preamble runs a one-time atomic `mv` migration on first invocation; if both old and new paths exist (partial state from a manual move), it stops and asks you to reconcile rather than risk losing writes. **Update your `.gitignore` if you were ignoring `.adsagent.json` / `.adsagent/`.**
 - **Tool prefix renamed `mcp__adsagent__*` → `mcp__notfair__*`** — driven by the `.mcp.json` server-name change. The shared preamble's MCP detection prefers the new prefix but still detects the legacy one (and the legacy `mcp__claude_ai_AdsAgent__*` connector) so skills keep working through the rename window. If you're on a session that hasn't restarted yet, the preamble nudges you to restart Claude Code once.
-- **MCP registry identifier renamed `io.github.nowork-studio/adsagent` → `io.github.nowork-studio/notfair`** — for users who consume the standalone MCP server directly (Claude Desktop, Cursor, Inspector, custom agents). Bumped the published server version to 0.3.0 to reflect the rename.
+- **MCP registry identifier renamed `io.github.swastik-agnihotri/adsagent` → `io.github.swastik-agnihotri/notfair`** — for users who consume the standalone MCP server directly (Claude Desktop, Cursor, Inspector, custom agents). Bumped the published server version to 0.3.0 to reflect the rename.
 
 ### Migration notes
 - The shared preamble handles `.adsagent` → `.notfair` filesystem migration automatically — no manual steps for global users.

@@ -2,7 +2,7 @@
 
 **This is the public, open-source repository that ships to all customers and the community.**
 
-NotFair is a host-agnostic plugin providing SEO, Google Ads, and Meta Ads skills for AI coding agents. It is distributed via the `nowork-studio` Claude Code marketplace and via direct agent install on Codex and Hermes. Every change here is user-facing.
+NotFair is a host-agnostic plugin providing SEO, Google Ads, and Meta Ads skills for AI coding agents. It is distributed via the `swastik-agnihotri` Claude Code marketplace and via direct agent install on Codex and Hermes. Every change here is user-facing.
 
 ## Engineering Execution Standard
 

@@ -1,7 +1,7 @@
 ## Preamble (run first)
 
 ```bash
-_UPD_BIN=$(ls ~/.claude/plugins/cache/nowork-studio/notfair/*/bin/notfair-update-check 2>/dev/null | head -1)
+_UPD_BIN=$(ls ~/.claude/plugins/cache/swastik-agnihotri/notfair/*/bin/notfair-update-check 2>/dev/null | head -1)
 [ -n "$_UPD_BIN" ] && _UPD=$("$_UPD_BIN" 2>/dev/null || true) || _UPD=""
 [ -n "$_UPD" ] && echo "$_UPD" || true
 ```

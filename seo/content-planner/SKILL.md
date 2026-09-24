@@ -209,7 +209,7 @@ notfair-content-calendar [--port 8323] [--calendar {data_dir}/content-calendar.j
 > Open the calendar in your browser:
 >
 > ```bash
-> ~/.claude/plugins/cache/nowork-studio/notfair/<version>/bin/notfair-content-calendar
+> ~/.claude/plugins/cache/swastik-agnihotri/notfair/<version>/bin/notfair-content-calendar
 > ```
 >
 > (or run it from a clone of the notfair repo: `bin/notfair-content-calendar`.)
