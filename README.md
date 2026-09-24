@@ -1,4 +1,7 @@
-# NotFair Plugin
+# Growth Agent Toolkit — Model Context Protocol (MCP) Growth Marketing Suite
+
+> A Model Context Protocol (MCP) server equipping autonomous AI agents with unified toolkits for Google Search Console, Google Ads, Meta Marketing API, and GA4.
+
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/gVJCRczpps)
