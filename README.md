@@ -1,4 +1,6 @@
-# Growth Agent Toolkit — Model Context Protocol (MCP) Growth Marketing Suite
+# Marketing Analytics & Ads API Automation Toolkit
+
+> A Model Context Protocol (MCP) toolkit providing AI agents with toolkits for GA4, Google Ads, and Meta APIs.
 
 > A Model Context Protocol (MCP) server equipping autonomous AI agents with unified toolkits for Google Search Console, Google Ads, Meta Marketing API, and GA4.
 
