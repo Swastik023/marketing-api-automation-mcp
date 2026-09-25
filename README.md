@@ -6,7 +6,7 @@
 
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/gVJCRczpps)
+
 
 **Open-source SEO, GEO, and marketing skills for AI agents.**
 
@@ -41,7 +41,7 @@ The Growth Agent Toolkit currently ships **48 skills** across SEO, GEO, paid med
 Install the NotFair plugin from its marketplace:
 
 ```text
-/plugin marketplace add swastik-agnihotri/growth-agent-toolkit
+/plugin marketplace add Swastik023/marketing-api-automation-mcp
 /plugin install notfair@swastik-agnihotri
 ```
 
@@ -77,7 +77,7 @@ For local testing before the marketplace listing is available, clone this
 repository into Cursor's local plugin directory:
 
 ```bash
-git clone https://github.com/swastik-agnihotri/growth-agent-toolkit.git ~/.cursor/plugins/local/notfair
+git clone https://github.com/Swastik023/marketing-api-automation-mcp.git ~/.cursor/plugins/local/notfair
 ```
 
 Restart Cursor after installing or updating the local plugin.
@@ -94,7 +94,7 @@ find **NotFair** in the Powers registry after its listing is approved. The root
 Install the extension directly from GitHub:
 
 ```bash
-gemini extensions install https://github.com/swastik-agnihotri/growth-agent-toolkit
+gemini extensions install https://github.com/Swastik023/marketing-api-automation-mcp
 ```
 
 The extension loads the repository guidance and the universal NotFair MCP. Run
@@ -105,13 +105,13 @@ The extension loads the repository guidance and the universal NotFair MCP. Run
 Install the universal NotFair plugin directly through Codex:
 
 ```bash
-codex plugin marketplace add swastik-agnihotri/growth-agent-toolkit --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
+codex plugin marketplace add Swastik023/marketing-api-automation-mcp --json && codex plugin add notfair@swastik-agnihotri --json && codex mcp login NotFair
 ```
 
 Codex installs the skills, registers one NotFair MCP connection, and opens its OAuth flow. If you prefer a workspace-local checkout, clone the repository and open it as a workspace; [`AGENTS.md`](AGENTS.md) maps marketing requests to the right skill.
 
 ```bash
-git clone https://github.com/swastik-agnihotri/growth-agent-toolkit.git
+git clone https://github.com/Swastik023/marketing-api-automation-mcp.git
 cd growth-agent-toolkit
 ```
 
@@ -125,7 +125,7 @@ For host-specific setup, give your agent [`INSTALL_FOR_AGENTS.md`](INSTALL_FOR_A
 
 ```text
 Retrieve and follow the instructions at:
-https://raw.githubusercontent.com/swastik-agnihotri/growth-agent-toolkit/main/INSTALL_FOR_AGENTS.md
+https://raw.githubusercontent.com/Swastik023/marketing-api-automation-mcp/main/INSTALL_FOR_AGENTS.md
 ```
 
 ## Why skills instead of one giant marketing agent?
@@ -254,8 +254,8 @@ Supported account operations come from the live connection. Changes must stay wi
 ## Privacy and support
 
 - [Privacy Policy](https://notfair.co/privacy)
-- [Support and community](https://discord.gg/gVJCRczpps)
-- [Issue tracker](https://github.com/swastik-agnihotri/growth-agent-toolkit/issues)
+
+- [Issue tracker](https://github.com/Swastik023/marketing-api-automation-mcp/issues)
 
 Inside a skill, connectors use tool-agnostic placeholders such as `~~google-ads`, `~~meta-ads`, `~~x-ads`, `~~linkedin-ads`, `~~reddit-ads`, `~~tiktok-ads`, `~~search-console`, `~~google-analytics`, `~~wordpress`, and `~~gohighlevel`. The agent resolves each placeholder to a compatible tool available in the current session, so the workflow is not coupled to one MCP namespace.
 
@@ -311,8 +311,8 @@ Open a pull request with one skill or one coherent improvement. For application 
 
 ## Community
 
-- Join the [NotFair Discord](https://discord.gg/gVJCRczpps)
-- [Open an issue](https://github.com/swastik-agnihotri/growth-agent-toolkit/issues)
+
+- [Open an issue](https://github.com/Swastik023/marketing-api-automation-mcp/issues)
 - Star the repository if these workflows make your agent more useful
 
 ## License
